@@ -1,0 +1,41 @@
+<!-- Run the command to launch the gazebo world Ensure you are in the correct directory -->
+
+<command>
+  ign gazebo maze_world_X.sdf replace X with the correct version of world wanted
+
+  v0-1 -> small maze
+  v0-2 -> large maze
+  v1-1 -> square
+  v1-2 -> corridor
+  v1-3 -> T-Env
+</command>
+
+<!-- Run this after running ign Gazebo in orde to create the bridges required for comms -->
+
+<command>
+  ros2 run ros_gz_bridge parameter_bridge --ros-args -p config_file:=$HOME/ros2_ws/src/launch/bridges_launch.yaml
+</command>
+
+<!-- Run the following to connect the service bridges -->
+
+<command>
+  ros2 run ros_gz_bridge parameter_bridge /world/world_demo/control@ros_gz_interfaces/srv/ControlWorld
+</command>
+
+<!-- ensure that colcon build and symlink is activated and then source the bashrc file -->
+
+<command>
+  colcon build
+</command>
+
+<command>
+  source ~/.bashrc
+</command>
+
+<!-- Run the above steps everytime the ml_package is changed -->
+
+<command>
+  ros2 run tugbot_ml_controller ml_node
+</command>
+
+"ml_node = tugbot_ml_controller.GazeboEnvironment:main"
