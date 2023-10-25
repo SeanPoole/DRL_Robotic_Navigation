@@ -1,0 +1,33 @@
+# Set each topic name explicitly
+- ros_topic_name: "/model/tugbot/pose"
+  gz_topic_name: "/model/tugbot/pose"
+  ros_type_name: "geometry_msgs/msg/Pose"
+  gz_type_name: "ignition.msgs.Pose"
+  direction: GZ_TO_ROS
+
+# Set each topic name explicitly
+- ros_topic_name: "/world/world_demo/model/tugbot/link/scan_front/sensor/scan_front/scan/points"
+  gz_topic_name: "/world/world_demo/model/tugbot/link/scan_front/sensor/scan_front/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "ignition.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+# Set each topic name explicitly
+- ros_topic_name: "/model/tugbot/cmd_vel"
+  gz_topic_name: "/model/tugbot/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "ignition.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# Set each topic name explicitly
+- ros_topic_name: "/model/end_point/pose"
+  gz_topic_name: "/model/end_point/pose"
+  ros_type_name: "geometry_msgs/msg/Pose"
+  gz_type_name: "ignition.msgs.Pose"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/model/tugbot/odometry"
+  gz_topic_name: "/model/tugbot/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "ignition.msgs.Odometry"
+  direction: GZ_TO_ROS
